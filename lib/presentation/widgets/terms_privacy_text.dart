@@ -2,7 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class TermsPrivacyText extends StatefulWidget {
-  const TermsPrivacyText({super.key});
+  final String textPrefix;
+
+  const TermsPrivacyText({
+    super.key,
+    this.textPrefix = 'By logging in, you agree to the ',
+  });
 
   @override
   State<TermsPrivacyText> createState() => _TermsPrivacyTextState();
@@ -33,7 +38,6 @@ class _TermsPrivacyTextState extends State<TermsPrivacyText> {
           ),
         );
       };
-    ;
   }
 
   @override
@@ -53,7 +57,7 @@ class _TermsPrivacyTextState extends State<TermsPrivacyText> {
         text: TextSpan(
           style: const TextStyle(color: Colors.black, fontSize: 13),
           children: [
-            const TextSpan(text: 'By logging in, you agree to the '),
+            TextSpan(text: widget.textPrefix),
             TextSpan(
               text: 'Terms & Conditions',
               style: const TextStyle(

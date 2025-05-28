@@ -4,14 +4,14 @@ import 'package:authapp/presentation/widgets/terms_privacy_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'images/header_login.png',
+                'images/header_register.png',
                 width: double.infinity,
                 height: screenHeight * 0.3,
                 fit: BoxFit.fill,
@@ -35,33 +35,29 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       const CustomTextFormField(
+                        label: 'Full Name',
+                        hint: 'Enter your full name here',
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.name,
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      const CustomTextFormField(
                         label: 'Email',
                         hint: 'Enter your email here',
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
                       ),
                       const SizedBox(
-                        height: 16.0,
+                        height: 12.0,
                       ),
                       const CustomPasswordField(
                         label: 'Password',
                         hint: 'Enter your password here',
                       ),
                       const SizedBox(
-                        height: 8.0,
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: InkWell(
-                          onTap: () {},
-                          child: const Text(
-                            'Forget Password?',
-                            style: TextStyle(color: Colors.blue, fontSize: 12),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 8.0,
+                        height: 16.0,
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -76,25 +72,27 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           onPressed: () {},
-                          child: const Text('Login'),
+                          child: const Text('Register'),
                         ),
                       ),
                       const SizedBox(height: 40.0),
-                      const TermsPrivacyText(),
+                      const TermsPrivacyText(
+                        textPrefix: 'By registering, you agree to the ',
+                      ),
                       const SizedBox(height: 32.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
                             style: TextStyle(fontSize: 13),
-                            "Doesn't have an account? ",
+                            "Already have an account? ",
                           ),
                           InkWell(
                             onTap: () {
-                              context.replaceNamed('register');
+                              context.replaceNamed('login');
                             },
                             child: const Text(
-                              'Register here',
+                              'Login here',
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontSize: 13,

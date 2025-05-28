@@ -1,4 +1,4 @@
-import 'package:authapp/presentation/screens/login_screen.dart';
+import 'package:authapp/presentation/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const LoginScreen(),
+      routerConfig: appRouter,
     );
   }
 }
