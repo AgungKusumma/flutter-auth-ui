@@ -1,16 +1,30 @@
-# authapp
+# 🔐 Auth App – Flutter Authentication UI Template
 
-A new simple auth Flutter project.
+Auth App is a Flutter-based user interface template designed for building authentication screens.
+This project focuses solely on UI slicing, making it ideal as a starting point for apps that require
+user login and registration functionality.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- Clean and responsive UI
+- Login screen with:
+    - Email & password fields
+    - "Forgot Password?" option
+- Custom form field widgets
+- Register screen (optional navigation)
+- Terms and Privacy text
+- Fully scrollable layout to handle different screen sizes
+- Built with Flutter best practices and reusable components
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚫 Note
+
+This project only includes the UI layout and does **not** implement actual authentication logic (
+e.g., backend integration, Firebase, etc.).
+
+---
+
+Feel free to use and customize it as the foundation for your Flutter authentication flow.
