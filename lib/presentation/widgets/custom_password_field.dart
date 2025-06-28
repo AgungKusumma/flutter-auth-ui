@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class CustomPasswordField extends StatefulWidget {
   final String label;
   final String hint;
+  final TextEditingController? controller;
 
   const CustomPasswordField({
     super.key,
     required this.label,
     required this.hint,
+    this.controller,
   });
 
   @override
@@ -24,6 +26,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
       label: widget.label,
       hint: widget.hint,
       obscureText: _obscure,
+      controller: widget.controller,
       suffixIcon: IconButton(
         iconSize: 20,
         icon: Icon(_obscure ? Icons.visibility_off : Icons.visibility),
