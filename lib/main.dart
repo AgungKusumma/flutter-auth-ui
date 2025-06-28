@@ -1,4 +1,4 @@
-import 'package:authapp/presentation/router/app_router.dart';
+import 'package:authapp/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
