@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           InkWell(
                             onTap: () {
-                              context.replaceNamed('login');
+                              context.pop();
                             },
                             child: const Text(
                               'Login here',

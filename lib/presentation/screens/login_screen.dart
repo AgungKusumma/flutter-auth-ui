@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           InkWell(
                             onTap: () {
-                              context.replaceNamed('register');
+                              context.pushNamed('register');
                             },
                             child: const Text(
                               'Register here',

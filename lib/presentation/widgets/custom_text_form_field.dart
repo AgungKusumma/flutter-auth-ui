@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputAction textInputAction;
   final bool obscureText;
   final Widget? suffixIcon;
+  final String? Function(String?)? validator;
 
   const CustomTextFormField({
     super.key,
@@ -16,7 +17,15 @@ class CustomTextFormField extends StatelessWidget {
     this.textInputAction = TextInputAction.done,
     this.obscureText = false,
     this.suffixIcon,
+    this.validator,
   });
+
+  String? _defaultValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'This field is required';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       obscureText: obscureText,
+      validator: validator ?? _defaultValidator,
       style: const TextStyle(fontSize: 13),
       decoration: InputDecoration(
         labelText: label,
